@@ -28,7 +28,7 @@ export default function Layout({ children }) {
   };
 
   const handleSystemThemeChange = () => {
-    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     darkQuery.onchange = (e) => {
       if (e.matches) {
@@ -50,8 +50,11 @@ export default function Layout({ children }) {
   }, []);
 
   return (
-    <div className="relative pb-24 overflow-hidden">
-      <div className="flex flex-col items-center max-w-2xl w-full mx-auto">
+    <div className="relative min-h-screen overflow-hidden bg-[#03040a] text-slate-100">
+      <div className="noir-grid" aria-hidden="true" />
+      <div className="noir-noise" aria-hidden="true" />
+      <div className="noir-glare" aria-hidden="true" />
+      <div className="relative z-10 flex flex-col min-h-screen w-full max-w-6xl mx-auto px-6 py-10 sm:px-10 lg:px-20">
         {children}
       </div>
     </div>
